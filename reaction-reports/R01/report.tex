@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\title{Reaction Report to \em{Noise Flow: Noise Modeling with Conditional Normalizing Flows}}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Contribution}
+
+A main contribution of Noise Flow is the proposal to use normalizing flows to
+model camera sensor noise distributions.
+This contribution stems from the recognition that real sensor noise
+distributions have complex distributions.
+The complexity of the real-world noise distribution derives from the
+combination of multiple sources of noise with operations in the camera
+pipeline.
+For example, noise may be introduced by the discrete nature of photons (shot
+noise), electronic noise, or gained noise.
+Taken independently these sources of noise could be modeled by simple
+distributions.
+For instance, shot noise can be modeled by a Poisson process.
+Taken together and combined with camera pipeline operations at different
+stages, however, the overall distribution of noise becomes difficult to model.
+This downstream noise is difficult to model even by a mixture of simple distributions.
+Therefore Noise Flow contributes a method using normalizing flows to model
+these complex noise distributions.
+By using normalizing flows, the proposed method produces a density for the
+noise, which is useful for both noise generation and likelihood computation.
+
+
+\section{Extension}
+
+Noise Flow proposes a generalization of simple noise models such
+as the camera noise level function (NLF) and additive Gaussian noise.
+It would be interesting to extend Noise Flow with the aim to improve
+interpretability.
+Knowing the distributions of each noise source would allow better diagnosis of
+noise in camera pipelines.
+To separate the final noise distribution into a mixture of noise from different
+sources, we could collect a new dataset.
+This new dataset could include readings at different stages of the camera
+pipeline, before each noise source.
+We could extend Noise Flow to have interpretable modules with known
+distributions, such as a Poisson process for shot noise.
+By learning to infer the parameters of the known distributions with our
+augmented dataset, we could separate out the interpretable sources of noise
+from the final noise distribution.
+The augmented dataset would also lend a rigorous test for whether end-to-end
+noise learning, as done by Noise Flow, can accurately attribute noise (e.g., to
+Gaussian and Poisson components).
+
+
+\end{document}
