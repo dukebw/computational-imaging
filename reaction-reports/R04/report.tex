@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\title{Reaction Report to \em{Light Field Photography with a Hand-held Plenoptic Camera}}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Contribution}
+
+Ng et al.\ contributed a system (Handheld Plenoptic Camera) for taking 4D light field photographs.
+Their main contribution was their design and experimental verification of a
+handheld plenopic camera that they actually built.
+Handheld Plenoptic Camera is built from a main lens, microlens array, and photosensor.
+Ng et al.\ described their choices in Handheld Plenoptic Camera's design space.
+For example, they matched main lens and microlens $f$-numbers in order to
+maximize the sensor image under each microlens without overlapping.
+They provided a detailed description of the specifications of their image
+sensor, microlens array, camera body, and lenses, and justified these choices.
+The detailed description of the Handheld Plenoptic Camera prototype would
+provide pioneering guidance to industry practitioners interested in implementing light field cameras.
+Furthermore, Handheld Plenoptic Camera's design improves over existing work at
+the time, since it was designed to have the same user experience (interface) as
+a conventional camera.
+Finally, Ng et al.\ provided an optical design and associated algorithms for integrating light passing through the aperture.
+They verified experimentally that their design improves signal-to-noise ratio compared to conventional photography with the same depth of field and exposure time.
+
+
+\section{Extension}
+
+Ng et al.\ make an interesting remark (\S 8) that 4D light field images create an interesting interactive component.
+They said that friends and colleagues enjoyed being able to play with the focus
+digitally, or change the viewpoint interactively.
+However, most consumer cameras are in smartphones.
+I am not sure whether manufacturers could include the same design as Handheld Plenoptic Camera in their smartphone cameras ---
+they may be limited by cost or form factor.
+Instead, we could use Handheld Plenoptic Camera to create a dataset of ground truth focus/refocus images.
+This dataset could be used to train a fully digital refocusing algorithm (e.g., a convolutional neural network).
+That way, the refocusing ability could be made more widely available in
+smartphone cameras. The digital refocusing quality should still be high due to the high accuracy of the dataset used for training the algorithm.
+
+
+\end{document}
